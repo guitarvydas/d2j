@@ -8,6 +8,9 @@ diagram {
       CellContent =   "<mxGeometry" Attribute+ ">" GraphicDetails+ "</mxGeometry>" -- withContent
                     | "<mxGeometry" Attribute+ "/>"                                -- withoutContent
         Attribute =   "id" "=" string        -- id
+	            | "parent" "=" string    -- parent
+	            | "source" "=" string    -- source
+	            | "target" "=" string    -- target
                     | name "=" attributeValue  -- other
         GraphicDetails = ~"</mxGeometry>" any
 

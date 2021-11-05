@@ -95,6 +95,10 @@ exports.setID = (s) => {
     return '';
 }
 
+exports.getID = (s) => {
+    return top (contextStack).id;
+}
+
 exports.appendAttribute = (name,v) => {
     top (contextStack).attributes.push ({name:name, value:v});
     return '';
