@@ -68,8 +68,15 @@ exports.swiplEsc = (s) => {
 
 var contextStack = [];
 
+function top () {
+    let len = contextStack.length;
+    let index = len - 1;
+    if (index < 0) { throw "support context stack empty";  }
+    return contextStack[index];
+}
+
 exports.pushNewContext = () => {
-    contextStack.push ({});
+    contextStack.push ({id:'',attributes:[]});
     return '';
 }
 
@@ -78,6 +85,11 @@ exports.popContext = () => {
     return '';
 }
 
+exports.setID = (s) => {
+    var name = namify (s);
+    top (contextStack).id = name;
+    return '';
+}
 
 var nameIndexTable = [];
 var counter = 1;
