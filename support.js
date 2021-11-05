@@ -66,6 +66,18 @@ exports.swiplEsc = (s) => {
 }
 
 
+var contextStack = [];
+
+exports.pushNewContext = () => {
+    contextStack.push ({});
+    return '';
+}
+
+exports.popContext = () => {
+    contextStack.pop ();
+    return '';
+}
+
 
 var nameIndexTable = [];
 var counter = 1;
