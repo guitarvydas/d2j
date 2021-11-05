@@ -44,9 +44,7 @@ function namify (s) {
 	.trim ()
 	.replace (/ /g,'__')
 	.replace (/-/g, '__');
-    if (id.match(/^[A-Z]/g)) {
-	id = "id_" + id;
-    };
+    id = "id_" + id;
     return id;
 }
 
