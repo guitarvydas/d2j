@@ -10,13 +10,13 @@
      Cell_withContent [kopen @as kgt @cellcontent kclose] =
               {{ support.pushNewContext (); }}
               [[\ncell(${support.getID ()}\n${support.generateAttributesPop ()}\n${cellcontent}]]
-     Cell_withoutContent [kopen @as kclose] = [[${kopen}${as}${kclose}]]
-      CellContent_withContent [kopen @as kgt @graphicDetails kclose] = [[${kopen}${as}${kgt}{$graphicDetails}${kclose}]]
-      CellContent_withoutContent [kopen @as kclose] = [[${kopen}${as}${kclose}]]
+     Cell_withoutContent [kopen @as kclose] = [[]]
+      CellContent_withContent [kopen @as kgt @graphicDetails kclose] = [[]]
+      CellContent_withoutContent [kopen @as kclose] = [[]]
         Attribute_id    [kid keq s] = [[${support.setID (s)}]]
-        Attribute_parent    [kid keq s] = [[${support.appendAttribute ('parent', s)}]]
-        Attribute_source    [kid keq s] = [[${support.appendAttribute ('source', s)}]]
-        Attribute_target    [kid keq s] = [[${support.appendAttribute ('target', s)}]]
+        Attribute_parent    [kid keq s] = [[${support.appendIDAttribute ('parent', s)}]]
+        Attribute_source    [kid keq s] = [[${support.appendIDAttribute ('source', s)}]]
+        Attribute_target    [kid keq s] = [[${support.appendIDAttribute ('target', s)}]]
         Attribute_other [ id keq a] = [[${support.appendAttribute (id, a)}]]
         GraphicDetails [c] = [[${c}]]
 

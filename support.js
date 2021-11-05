@@ -104,6 +104,11 @@ exports.appendAttribute = (name,v) => {
     return '';
 }
 
+exports.appendIDAttribute = (name,s) => {
+    top (contextStack).attributes.push ({name:name, value:namify (s)});
+    return '';
+}
+
 exports.generateAttributesPop = () => {
     let context = top (contextStack);
     popContext ();
@@ -117,12 +122,13 @@ exports.generateAttributesPop = () => {
     return s;
 }
 
-var nameIndexTable = [];
-var counter = 1;
-
-exports.resetNames = () => {
-    nameIndexTable = [];
-    counter = 1;
+exports.expandStyle = (s) => {
+    var sx = s
+	.replace(/"/g,'')
+	.replace(/ellipse;/g,'kind=ellipse;')
+	.replace(/text;/g,'kind=text;')
+	.replace (/([^=]+)=([^;]+);/g, '$1="$2" ');
+    return sx;
 }
 
 
