@@ -29,15 +29,6 @@ exports.expandStyle = (s) => {
     return sx;
 }
 
-exports.resetNames = () => {
-    nameIndexTable = [];
-    counter = 1;
-}
-
-
-var nameIndexTable = [];
-var counter = 1;
-
 
 function namify (s) {
     let id = stripQuotes (s)
@@ -73,3 +64,15 @@ exports.mangleNewlines = (s) => {
 exports.swiplEsc = (s) => {
     return s.replace (/[\\]/g,'&#92;');
 }
+
+
+
+var nameIndexTable = [];
+var counter = 1;
+
+exports.resetNames = () => {
+    nameIndexTable = [];
+    counter = 1;
+}
+
+
