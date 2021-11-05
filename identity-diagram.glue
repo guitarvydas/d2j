@@ -15,5 +15,6 @@
   string [q1 @cs q2] = [[${q1}${cs}${q2}]]
   notDQ [c] = [[${c}]]
   attributeValue [ns] = [[${ns}]]
-  number [@d] = [[${d}]]
+  number_qouted [q1 @ds q2] = [[${q1}${ds}${q2}]]
+  number_raw [@ds] = [[${ds}]]
   quote [c] = [[${c}]]

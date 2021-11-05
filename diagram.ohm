@@ -16,6 +16,7 @@ diagram {
   string= quote notDQ* quote
   notDQ = ~quote any
   attributeValue = number | string
-  number = digit+ 
+  number =   quote digit+ quote -- qouted
+           |       digit+       -- raw 
   quote = "\""
 }
