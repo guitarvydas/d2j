@@ -1,5 +1,5 @@
   Diagrams [@diagrams] = [[${diagrams}]]
-  Diagram [kopen @as kgt diagramcontent kclose] = [[${kopen}${kgt}${diagramcontent}${kclose}]]
+  Diagram [kopen @as kgt diagramcontent kclose] = [[${kopen}${as}${kgt}${diagramcontent}${kclose}]]
    DiagramContent[kopen @as kgt rootcontent kclose] = [[${kopen}${as}${kgt}${rootcontent}${kclose}]]
     RootContent [kopen @cells kclose] = [[${kopen}${cells}${kclose}]]
      Cell_withContent [kopen @as kgt @cellcontent kclose] = [[${kopen}${as}${kgt}${cellcontent}${kclose}]]
