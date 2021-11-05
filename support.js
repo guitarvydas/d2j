@@ -117,7 +117,7 @@ exports.generateAttributesPop = () => {
     context.attributes.forEach (a => {
 	let name = a.name;
 	let v = a.value;
-	s = s + `\nrelation(${name}, ${id}, ${v}).`;
+	s = s + `\ntriple(${name}, ${id}, ${v}).`;
     });
     return s;
 }
