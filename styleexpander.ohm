@@ -1,20 +1,23 @@
-  Diagrams [@diagrams] = [[${diagrams}]]
-  Diagram [kopen @as kgt diagramcontent kclose] = [[${kopen}${kgt}${diagramcontent}${kclose}]]
-   DiagramContent[kopen @as kgt rootcontent kclose] = [[${kopen}${as}${kgt}${rootcontent}${kclose}]]
-    RootContent [kopen @cells kclose] = [[${kopen}${cells}${kclose}]]
-     Cell_withContent [kopen @as kgt @cellcontent kclose] = [[${kopen}${as}${kgt}${cellcontent}${kclose}]]
-     Cell_withoutContent [kopen @as kclose] = [[${kopen}${as}${kclose}]]
-      CellContent_withContent [kopen @as kgt @graphicDetails kclose] = [[${kopen}${as}${kgt}{$graphicDetails}${kclose}]]
-      CellContent_withoutContent [kopen @as kclose] = [[${kopen}${as}${kclose}]]
-        Attribute [id eq a] = [[ ${id}${eq}${a}]]
-        GraphicDetails [c] = [[${c}]]
+diagram {
+  Diagrams = Diagram+
+  Diagram = "<diagram" Attribute+ ">" DiagramContent "</diagram>"
+   DiagramContent = "<mxGraphModel" Attribute+ ">" RootContent "</mxGraphModel>"
+    RootContent = "<root>" Cell+ "</root>"
+     Cell = "<mxCell" Attribute+ ">" CellContent+ "</mxCell>" -- withContent
+            | "<mxCell" Attribute+ "/>"                       -- withoutContent
+      CellContent =   "<mxGeometry" Attribute+ ">" GraphicDetails+ "</mxGeometry>" -- withContent
+                    | "<mxGeometry" Attribute+ "/>"                                -- withoutContent
+        Attribute =  "style" "=" string       -- style
+                    | name "=" attributeValue -- other
+        GraphicDetails = ~"</mxGeometry>" any
 
-  id [c @cs] = [[${c}${cs}]]
-  firstChar [c] = [[${c}]]
-  restChar [c] = [[${c}]]
-  string [q1 @cs q2] = [[${q1}${cs}${q2}]]
-  notDQ [c] = [[${c}]]
-  attributeValue [ns] = [[${ns}]]
-  number_qouted [q1 @ds q2] = [[${q1}${ds}${q2}]]
-  number_raw [@ds] = [[${ds}]]
-  quote [c] = [[${c}]]
+  name = firstChar restChar*
+  firstChar = letter
+  restChar = "_" | alnum  
+  string= quote notDQ* quote
+  notDQ = ~quote any
+  attributeValue = number | string
+  number =   quote digit+ quote -- qouted
+           |       digit+       -- raw 
+  quote = "\""
+}
