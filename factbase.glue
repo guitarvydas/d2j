@@ -1,7 +1,7 @@
   Diagrams [@diagrams] = [[${diagrams}]]
   Diagram [kopen @as kgt diagramcontent kclose] = 
           {{ support.pushNewContext (); }}
-          [[\ndiagram(${support.getID ()})${support.generateAttributesPop ()}${diagramcontent}\n]]
+          [[\nrelation(diagram, ${support.getID ()}, "").${support.generateAttributesPop ()}${diagramcontent}\n]]
 
    DiagramContent[kopen @as kgt rootcontent kclose] = [[${rootcontent}]]
 
@@ -9,7 +9,7 @@
 
      Cell_withContent [kopen @as kgt @cellcontent kclose] =
               {{ support.pushNewContext (); }}
-              [[\ncell(${support.getID ()},"")${support.generateAttributesPop ()}\n${cellcontent}]]
+              [[\nrelation(cell, ${support.getID ()}, "").${support.generateAttributesPop ()}\n${cellcontent}]]
      Cell_withoutContent [kopen @as kclose] = [[]]
       CellContent_withContent [kopen @as kgt @graphicDetails kclose] = [[]]
       CellContent_withoutContent [kopen @as kclose] = [[]]
