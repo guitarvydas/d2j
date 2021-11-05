@@ -69,8 +69,8 @@ height(i5jZ3dy8F4nkPbaXPHF6__3, 80).
 height(i5jZ3dy8F4nkPbaXPHF6__5, 40).
 height(i5jZ3dy8F4nkPbaXPHF6__6, 150).
 height(i5jZ3dy8F4nkPbaXPHF6__9, 40).
+name(, "Goodbye World").
 name(fo9xvGcHm88d3B_x5weG, "Hello World").
-name(yyy, "Goodbye World").
 rect(0,"").
 rect(1,"").
 rect(i5jZ3dy8F4nkPbaXPHF6__1,"").

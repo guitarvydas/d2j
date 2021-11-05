@@ -1,6 +1,6 @@
 Diagrams [@ds] = [[${ds}]]
 Diagram [k @a k2 graphmodel k3] =
-  {{scopeAdd ('diagramid', 'yyy'); }}
+  {{scopeAdd ('diagramid', ''); }}
   [[${a}${graphmodel}]]
 Attribute [a] = [[${a}]]
 NameAttribute [an k s] = [[name(${support.getDiagramID(_scope)}, ${s}).\n]]
@@ -19,7 +19,7 @@ GraphModel [k1 @as k2 root k3] = [[${root}]]
 Root [k1 @cells k2] = [[${cells}]]
 
 Cell [c] =
-  {{scopeAdd ('cellid', 'zzz');}}
+  {{scopeAdd ('cellid', '');}}
   [[cell(${support.getCellID(_scope)},"").\ndiagramContains(${support.getDiagramID(_scope)}, ${support.getCellID(_scope)}).\n${c}]]
 
 CellWithoutContent [k1 @as k2] = [[${as}]]
