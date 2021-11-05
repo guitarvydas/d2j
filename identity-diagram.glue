@@ -6,7 +6,7 @@
      Cell_withoutContent [kopen @as kclose] = [[${kopen}${as}${kclose}]]
       CellContent_withContent [kopen @as kgt @graphicDetails kclose] = [[${kopen}${as}${kgt}{$graphicDetails}${kclose}]]
       CellContent_withoutContent [kopen @as kclose] = [[${kopen}${as}${kclose}]]
-        Attribute [id eq a] = [[${id}${eq}${a}]]
+        Attribute [id eq a] = [[ ${id}${eq}${a}]]
         GraphicDetails [c] = [[${c}]]
 
   id [c @cs] = [[${c}${cs}]]
@@ -16,3 +16,4 @@
   notDQ [c] = [[${c}]]
   attributeValue [ns] = [[${ns}]]
   number [@d] = [[${d}]]
+  quote [c] = [[${c}]]

@@ -13,8 +13,9 @@ diagram {
   id = firstChar restChar*
   firstChar = letter
   restChar = "_" | alnum  
-  string= "\"" notDQ* "\""
-  notDQ = ~"\"" any
+  string= quote notDQ* quote
+  notDQ = ~quote any
   attributeValue = number | string
-  number = digit+
+  number = digit+ 
+  quote = "\""
 }
