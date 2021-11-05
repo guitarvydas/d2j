@@ -1,7 +1,7 @@
 diagram {
   Diagrams = Diagram+
-  Diagram = "<diagram" Attribute+ ">" DiagramContent? "</diagram>"
-   DiagramContent = "<mxGraphModel" Attribute+ ">" RootContent? "</mxGraphModel>"
+  Diagram = "<diagram" Attribute+ ">" DiagramContent "</diagram>"
+   DiagramContent = "<mxGraphModel" Attribute+ ">" RootContent "</mxGraphModel>"
     RootContent = "<root>" Cell+ "</root>"
      Cell = "<mxCell" Attribute+ ">" CellContent+ "</mxCell>" -- withContent
             | "<mxCell" Attribute+ "/>"                       -- withoutContent
