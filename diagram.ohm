@@ -7,10 +7,11 @@ diagram {
             | "<mxCell" Attribute+ "/>"                       -- withoutContent
       CellContent =   "<mxGeometry" Attribute+ ">" GraphicDetails+ "</mxGeometry>" -- withContent
                     | "<mxGeometry" Attribute+ "/>"                                -- withoutContent
-        Attribute = id "=" attributeValue
+        Attribute =   "id" "=" string        -- id
+                    | name "=" attributeValue  -- other
         GraphicDetails = ~"</mxGeometry>" any
 
-  id = firstChar restChar*
+  name = firstChar restChar*
   firstChar = letter
   restChar = "_" | alnum  
   string= quote notDQ* quote
