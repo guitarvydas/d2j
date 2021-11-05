@@ -80,8 +80,12 @@ exports.pushNewContext = () => {
     return '';
 }
 
-exports.popContext = () => {
+function popContext () {
     contextStack.pop ();
+}
+
+exports.popContext = () => {
+    popContext ();
     return '';
 }
 
@@ -89,6 +93,12 @@ exports.setID = (s) => {
     var name = namify (s);
     top (contextStack).id = name;
     return '';
+}
+
+exports.generateAttributesPop = () => {
+    let context = top (contextStack);
+    popContext ();
+    return `id >> ${context.id}`;
 }
 
 var nameIndexTable = [];

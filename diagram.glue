@@ -1,7 +1,7 @@
   Diagrams [@diagrams] = [[${diagrams}]]
   Diagram [kopen @as kgt diagramcontent kclose] = 
           {{ support.pushNewContext (); }}
-          [[${kopen}${kgt}${diagramcontent}${kclose}${support.popContext ()}]]
+          [[${support.generateAttributesPop ()}\n]]
    DiagramContent[kopen @as kgt rootcontent kclose] = [[${kopen}${as}${kgt}${rootcontent}${kclose}]]
     RootContent [kopen @cells kclose] = [[${kopen}${cells}${kclose}]]
      Cell_withContent [kopen @as kgt @cellcontent kclose] =
