@@ -95,10 +95,22 @@ exports.setID = (s) => {
     return '';
 }
 
+exports.appendAttribute = (name,v) => {
+    top (contextStack).attributes.push ({name:name, value:v});
+    return '';
+}
+
 exports.generateAttributesPop = () => {
     let context = top (contextStack);
     popContext ();
-    return `id >> ${context.id}`;
+    let s = '';
+    let id = context.id;
+    context.attributes.forEach (a => {
+	let name = a.name;
+	let v = a.value;
+	s = s + `\n${name}(${id}, ${v})`;
+    });
+    return s;
 }
 
 var nameIndexTable = [];

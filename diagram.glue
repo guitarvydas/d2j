@@ -10,8 +10,8 @@
      Cell_withoutContent [kopen @as kclose] = [[${kopen}${as}${kclose}]]
       CellContent_withContent [kopen @as kgt @graphicDetails kclose] = [[${kopen}${as}${kgt}{$graphicDetails}${kclose}]]
       CellContent_withoutContent [kopen @as kclose] = [[${kopen}${as}${kclose}]]
-        Attribute_id    [kid keq s] = [[ ${kid}${keq}${s}${support.setID (s)}]]
-        Attribute_other [ id keq a] = [[ ${id}${keq}${a}]]
+        Attribute_id    [kid keq s] = [[${support.setID (s)}]]
+        Attribute_other [ id keq a] = [[${support.appendAttribute (id, a)}]]
         GraphicDetails [c] = [[${c}]]
 
   name [c @cs] = [[${c}${cs}]]
