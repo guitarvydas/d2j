@@ -32,6 +32,6 @@ swipl -q \
 # augment the factbase (fb.pl) after every inferencing step
 cat 5.pl 6.pl | sort >fb.pl
 # cleanup
-#rm 5.pl 6.pl
+rm 5.pl 6.pl
 
 swipl -q -g 'consult(diafb2json).' -g 'allDrawings.' -g 'halt.'
