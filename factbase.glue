@@ -9,7 +9,7 @@
 
      Cell_withContent [kopen @as kgt @cellcontent kclose] =
               {{ support.pushNewContext (); }}
-              [[\ncell(${support.getID ()}\n${support.generateAttributesPop ()}\n${cellcontent}]]
+              [[\ncell(${support.getID ()},"")\n${support.generateAttributesPop ()}\n${cellcontent}]]
      Cell_withoutContent [kopen @as kclose] = [[]]
       CellContent_withContent [kopen @as kgt @graphicDetails kclose] = [[]]
       CellContent_withoutContent [kopen @as kclose] = [[]]
