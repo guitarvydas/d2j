@@ -1,0 +1,5 @@
+#!/bin/bash
+fname=`basename $1`
+d2f $fname >fb.pl
+swipl -q -g 'consult(rects).' -g 'printRects.' -g 'halt.' | ./appendFacts.bash
+

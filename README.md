@@ -9,6 +9,7 @@ diagram contains only:
 - edges
 
 
-output: JSON array of diagrams (1 per drawio tab)
+output: JSON array of objects (1 per diagram)
 
-status: tabs don't work yet, allow only 1 tab with 1 diagram on it
+see run.bash for example usage of d2j
+

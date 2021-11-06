@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# test for single tab only
-# ./d2j.bash single
+# example usage only, use d2j from ~/.local/bin
+./d2j helloworld
 
-echo test for two tabs in drawio file
-./d2j.bash helloworld
 
