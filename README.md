@@ -13,3 +13,4 @@ output: JSON array of objects (1 per diagram)
 
 see run.bash for example usage of d2j
 
+[uses: d2f]
