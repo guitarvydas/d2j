@@ -2,11 +2,11 @@
 
 :- use_module(library(http/json)).
 
-allDiagramIDs(IDs):-
-    bagof(ID,fact(diagram,ID,_),IDs).
+%% allDiagramIDs(IDs):-
+%%     bagof(ID,fact(diagram,ID,_),IDs).
 
-childrenOf(Diagram,Children):-
-    bagof(Child,fact(contains,Diagram,Child),Children).
+%% childrenOf(Diagram,Children):-
+%%     bagof(Child,fact(contains,Diagram,Child),Children).
 
 relationOf(Diagram,Rel,Child,Obj):-
     fact(diagram,Diagram,_),fact(contains,Diagram,Child),fact(Rel,Child,Obj).
@@ -15,15 +15,15 @@ elementOf(Diagram,Element):-
     relationOf(Diagram,Rel,Child,Obj),
     Element = element{relation:Rel,subject:Child,object:Obj}.
 
-% bagof(E,elementOf(D,E),Ebag).
-% bagof(E,elementOf(D,E),Ebag),json_write(user_output,[D,Ebag]).
+%% % bagof(E,elementOf(D,E),Ebag).
+%% % bagof(E,elementOf(D,E),Ebag),json_write(user_output,[D,Ebag]).
 
-%% junk:-
-%%     forall(fact(diagram,D,_),
-%% 	   jwrite(D)).
+%% %% junk:-
+%% %%     forall(fact(diagram,D,_),
+%% %% 	   jwrite(D)).
 
-%% jwrite(D):-
-%%     bagof(E,elementOf(D,E),Ebag),json_write(user_output,[D,Ebag]).
+%% %% jwrite(D):-
+%% %%     bagof(E,elementOf(D,E),Ebag),json_write(user_output,[D,Ebag]).
 
 	   
 diagramElements(D,DE):-
